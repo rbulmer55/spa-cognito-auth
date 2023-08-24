@@ -16,7 +16,7 @@ export async function generatePKCETokens(): Promise<PKCEResponse> {
 }
 
 export function getAuthorizationCode(pkceChallenge: string) {
-  return `${appDomain}/oauth2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirect}&state=1234&scope=email&code_challenge_method=S256&code_challenge=${pkceChallenge}`
+  return `${appDomain}/oauth2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirect}&state=1234&scope=email+openid+profile&code_challenge_method=S256&code_challenge=${pkceChallenge}`
 }
 
 export function getLogoutUrl() {

@@ -9,7 +9,7 @@ import {
 
 import { useUserStore } from '../stores/user'
 
-async function requireAuth(to: any, from: any, next: any) {
+function requireAuth(to: any, from: any, next: any) {
   const userStore = useUserStore()
   if (!userStore.loggedIn || !userStore.cognitoInfo.access_token) {
     userStore.setLoggedOut()
